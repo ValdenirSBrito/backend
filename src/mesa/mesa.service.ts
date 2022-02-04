@@ -17,18 +17,18 @@ export class MesaService {
       throw new ConflictException('Mesa Ocupada')
     }
 
-    const createdMesa = await this.prismaService.mesa.create({
+    const createMesa = await this.prismaService.mesa.create({
      data:{
       numeroMesa: criarMesaDto.numeroMesa,
       livre: criarMesaDto.livre,
       descricao: criarMesaDto.descricao,
       id: mesaId,
     },
-    include: {
-      menus: true,
-    }
+    //include: {
+    //  menus: true,
+    //}
     });
-  return createdMesa;
+  return createMesa;
   }
 
   async findUnique(mesaId: string): Promise<Mesa>{
@@ -76,10 +76,10 @@ if(!consultarMesas){
 throw new NotFoundException('Mesa nao encontrada')
 }
 
-const deletedMesa = await this.prismaService.mesa.delete({
+const deleteMesa = await this.prismaService.mesa.delete({
   where: { id: mesaId },  
 });
-return deletedMesa;
+return deleteMesa;
   }
 
 }

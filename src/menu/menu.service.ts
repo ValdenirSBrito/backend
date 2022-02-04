@@ -13,12 +13,12 @@ export class MenuService {
     
     const createdMenu = await this.prismaService.menu.create({
         data: {
-            nome: criarMenuDto.name,
+            name: criarMenuDto.name,
             item: criarMenuDto.item,
-            tamanho: criarMenuDto.size,
-            imagem: criarMenuDto.image,
-            preco: criarMenuDto.price,
-            observacao: criarMenuDto.observacion,
+            size: criarMenuDto.size,
+            image: criarMenuDto.image,
+            price: criarMenuDto.price,
+            observacion: criarMenuDto.observacion,
         }
     })
     return createdMenu;
