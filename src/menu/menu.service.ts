@@ -80,9 +80,9 @@ async delete(menuId: string): Promise<Menu>{
     if(!menuFinded){
         throw new NotFoundException('Menu não encontrado')
     }
-    const deletedMenu = await this.prismaService.menu.delete({
+    const deleteMenu = await this.prismaService.menu.delete({
         where: { id: menuId },
     });
-    return deletedMenu;
+    return deleteMenu;
 }
 }
