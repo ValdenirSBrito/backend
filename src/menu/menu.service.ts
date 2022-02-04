@@ -62,11 +62,11 @@ throw new ConflictException('Menu nao existe');
 const updateMenu = await this.prismaService.menu.update({
     where: { id: menuId },
     data: { 
-            nome: updateMenuDto.name,
+            name: updateMenuDto.name,
             item: updateMenuDto.item,
-            tamanho: updateMenuDto.size,
-            imagem: updateMenuDto.image,
-            preco: updateMenuDto.price,   
+            size: updateMenuDto.size,
+            image: updateMenuDto.image,
+            price: updateMenuDto.price,   
     }
 })
 
